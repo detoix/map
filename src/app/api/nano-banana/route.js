@@ -96,16 +96,15 @@ export async function POST(request) {
 3. Environment: visually separating the house from the open fields. Transform the remaining flat satellite base imagery outside of the yard boundary into high-fidelity 3D landscape textures, featuring volumetric grass, detailed tilled soil, and roads. Clear, natural daylight with sharp, realistic shadow casting and strong ambient occlusion to firmly ground the buildings onto the terrain topography. Highly detailed render, ultra-sharp, crisp detail, 8k resolution, drone photography style.';
 
     const effectivePrompt =
-      'Photorealistic aerial architectural visualization. Preserve the spatial layout, composition, and geographic positions from the input image. \
+      "Photorealistic aerial architectural visualization. Preserve the spatial layout, composition, and geographic positions from the input image.\
 \
-1. BUILDING: Render the 3D building massing model as a fully realized structure. Maintain its exact volumetric shape, roofline, footprint, and position from the input. Apply realistic facade materials, windows, doors, and roofing textures. Do not alter the structural form or location. \
+BUILDING: Render the 3D building massing model as a fully realized structure. Maintain its exact volumetric shape, roofline, footprint, and position from the input. Apply realistic facade materials, windows, doors, and roofing textures. Do not alter the structural form or location.\
 \
-2. IMMEDIATE SURROUNDINGS: Add a neat residential yard around the building with manicured lawn, small pathways, and low shrubs. This yard should visually separate the house from the surrounding landscape. \
+IMMEDIATE SURROUNDINGS: Add a neat residential yard around the building with manicured lawn, small pathways, and low shrubs. This yard should visually separate the house from the surrounding landscape.\
 \
-3. ENVIRONMENT: Replace all flat 2D satellite imagery with fully rendered 3D elements while keeping their positions. Flat tree blobs must become detailed 3D trees with volumetric canopies and visible branches. Flat grass areas must become lush volumetric grass fields. Blurry roads must become textured 3D roads with depth. Other buildings visible in the satellite image must be rendered as 3D structures. Transform the entire scene from a flat aerial photo into a photorealistic 3D render - every element should look three-dimensional, not flat. Maintain approximate positions of all features. \
+ENVIRONMENT: Replace all flat 2D satellite imagery with fully rendered 3D elements while keeping their positions. Force vertical extrusion on all background elements. Flat tree blobs must become detailed 3D trees with volumetric canopies and visible branches. Flat grass areas must become lush volumetric grass fields. Blurry roads must become textured 3D roads with depth and visible curbs. Other buildings visible in the satellite image must be rendered as distinct 3D geometric volumes rising from the ground. Transform the entire scene from a flat aerial photo into a photorealistic 3D render.\
 \
-4. LIGHTING & QUALITY: Clear natural daylight. Sharp, realistic shadow casting. Strong ambient occlusion to ground buildings onto terrain. 8K resolution, ultra-sharp, crisp detail, tack-sharp focus throughout. Drone photography style. \
-';
+LIGHTING & QUALITY: Clear natural daylight. Sharp, realistic shadow casting. Ray-traced Global Illumination and Ambient Occlusion to separate buildings from the terrain. 8K resolution, ultra-sharp, crisp detail, tack-sharp focus throughout. Drone photography style with deep depth perception.";
 
     const requestBody = {
       contents: [

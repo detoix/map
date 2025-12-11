@@ -583,6 +583,13 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => {
+                if (overlayImageUrl) {
+                  const link = document.createElement('a');
+                  link.download = `ai-render-${Date.now()}.png`;
+                  link.href = overlayImageUrl;
+                  link.click();
+                  return;
+                }
                 const imageData = captureCompositeImage();
                 if (!imageData) {
                   alert('Failed to capture screenshot');
